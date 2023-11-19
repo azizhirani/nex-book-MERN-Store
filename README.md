@@ -18,7 +18,6 @@ This is a full-stack web application for managing book records. The application 
   - [Mongoose](https://mongoosejs.com/): An elegant MongoDB object modeling tool.
 
 ## Features
-
 - **View Books:** See a list of all books in the system.
 - **Add Book:** Add a new book to the records.
 - **Edit Book:** Modify information for an existing book.
@@ -39,20 +38,30 @@ Before you begin, ensure you have the following installed on your machine:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/book-records-mern.git
-   cd book-records-mern
+   git clone https://github.com/azizhirani/BOOKSTORE-MERN-AZIZ.git
+   cd BOOKSTORE-MERN-AZIZ
 
 
 ## Install Dependencies:
 
 1. **Install backend dependencies**
+   
+    ```bash
     cd backend
-    npm install
+    npm install mongodb mongoose express cors
 
 2. **Install frontend dependencies**
-    cd ../frontend
-    npm install
+   
+   ```bash
+   cd frontend
+   npm install react-router-dom notistack axios react-icons
 
+3. **Install tailwindCSS dependencies**
+
+   ```bash
+   npm install -D tailwindcss
+   npx tailwindcss init
+- for further installation refer [TailwindCSS Install Guide](https://tailwindcss.com/docs/installation)
 
 ### Set Up MongoDB Connection:
 - Create a .env file in the server directory.
@@ -65,15 +74,19 @@ Before you begin, ensure you have the following installed on your machine:
 ## Start the Application:
 
 1. **Start the backend server**
-        cd backend
-        npm run dev
+   
+   ```bash
+   cd backend
+   npm run dev
 
 - Open a new terminal and start the frontend:
 
-1. **Start the frontend server**
-        cd frontend
-        npm run dev
+2. **Start the frontend server**
+        
+     ```bash
+     cd frontend
+     npm run dev
 
-- Your web app should now be accessible at http://localhost:5173.
+- Your web app should now be accessible at [http://localhost:5173]
 
 
