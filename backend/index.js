@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json( )); 
 
 const corsOptions = {
-  origin: 'https://bookstore-mern-aziz-frontend.onrender.com/'
+  origin: 'https://bookstore-mern-aziz-lhb5.vercel.app/'
 }
 app.use(cors(corsOptions));
   // {
