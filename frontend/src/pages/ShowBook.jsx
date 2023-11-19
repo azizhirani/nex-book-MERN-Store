@@ -10,34 +10,19 @@ const ShowBook = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchBook = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(`http://localhost:5555/books/${id}`);
-        setBook(response.data);
-      } catch (error) {
-        console.error('Error fetching book:', error);
-      } finally {
+    setLoading(true);
+    axios
+      .get(`http://localhost:5555/books/${id}`)
+      .then((response) => {
+        setBook(response.data.book);
         setLoading(false);
-      }
-    };
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
 
-    fetchBook();
-  }, [id]);
-  const formatDate = (dateString) => {
-    const options = {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      fractionalSecondDigits: 3,
-      timeZoneName: 'short',
-    };
-  
-    return new Date(dateString).toLocaleString('en-US', options);
-  };
   return (
     <div className='p-4'>
       <BackButton />
@@ -46,23 +31,34 @@ const ShowBook = () => {
         <Spinner />
       ) : (
         <div className='flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4'>
-          <BookDetail label="ID :" value={book._id} />
-          <BookDetail label="Title :" value={book.title} />
-          <BookDetail label="Author :" value={book.author} />
-          <BookDetail label="Publish Year :" value={book.publishYear} />
-          <BookDetail label="Create Time :" value={formatDate(book.createdAt)} />
-          <BookDetail label="Last Update Time :" value={formatDate(book.updatedAt)} />
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Id</span>
+            <span>{book._id}</span>
+          </div>
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Title</span>
+            <span>{book.title}</span>
+          </div>
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Author</span>
+            <span>{book.author}</span>
+          </div>
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Publish Year</span>
+            <span>{book.publishYear}</span>
+          </div>
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Create Time</span>
+            <span>{new Date(book.createdAt).toString()}</span>
+          </div>
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Last Update Time</span>
+            <span>{new Date(book.updatedAt).toString()}</span>
+          </div>
         </div>
       )}
     </div>
   );
 };
-
-const BookDetail = ({ label, value }) => (
-  <div className='my-4'>
-    <span className='text-xl mr-4 text-gray-500'>{label}</span>
-    <span>{value}</span>
-  </div>
-);
 
 export default ShowBook;

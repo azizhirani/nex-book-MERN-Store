@@ -18,9 +18,9 @@ const EditBook = () => {
     setLoading(true);
     axios.get(`http://localhost:5555/books/${id}`)
     .then((response) => {
-        setAuthor(response.data.author);
-        setPublishYear(response.data.publishYear)
-        setTitle(response.data.title)
+        setAuthor(response.data.book.author);
+        setPublishYear(response.data.book.publishYear)
+        setTitle(response.data.book.title)
         setLoading(false);
       }).catch((error) => {
         setLoading(false);
@@ -37,7 +37,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`http://localhost:5555/books/${id}`,data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
