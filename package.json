@@ -7,8 +7,8 @@
     "install-server": "cd backend && npm install",
     "start-server": "cd backend && node index.js",
     "install-frontend": "cd frontend && npm install",
-    "build-frontend": "cd frontend && npm run build",
-    "start-frontend": "cd frontend && npm run start"
+    "build-frontend": "cd frontend && npm run vite build",
+    "start-frontend": "cd frontend && npm run vite "
   },
   "keywords": [],
   "author": "Aziz Hirani ",
