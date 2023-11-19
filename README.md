@@ -43,80 +43,45 @@ Before you begin, ensure you have the following installed on your machine:
    cd book-records-mern
 
 
-Install Dependencies:
+## Install Dependencies:
 
-Install backend dependencies:
+### Install backend dependencies:
 
-bash
-Copy code
-cd server
-npm install
-Install frontend dependencies:
-
-bash
-Copy code
-cd ../client
-npm install
-Set Up MongoDB Connection:
-
-Create a .env file in the server directory.
-
-Add your MongoDB connection string in the .env file:
-
-env
-Copy code
-MONGODB_URI=your_mongodb_connection_string
-Start the Application:
-
-Start the backend server:
-
-bash
-Copy code
-cd server
-npm start
-Open a new terminal and start the frontend:
-
-bash
-Copy code
-cd client
-npm start
-Your web app should now be accessible at http://localhost:3000.
-
-Contributing
-If you'd like to contribute to the project, follow these steps:
-
-Fork the Repository:
-
-Click on the "Fork" button on the top right of the repository.
-Clone Your Fork:
-
-bash
-Copy code
-git clone https://github.com/your-username/book-records-mern.git
-cd book-records-mern
-Create a New Branch:
-
-bash
-Copy code
-git checkout -b feature/your-feature
-Make Changes and Commit:
-
-bash
-Copy code
-git add .
-git commit -m 'Add new feature'
-Push Changes to Your Fork:
-
-bash
-Copy code
-git push origin feature/your-feature
-Submit a Pull Request:
-
-Go to your fork on GitHub and click on "New Pull Request."
+    ```bash
+    cd backend
+    npm install
 
 
-License
-This project is licensed under the MIT License.
+### Install frontend dependencies:
 
-typescript
-Copy code
+    ```bash
+    cd ../frontend
+    npm install
+
+
+### Set Up MongoDB Connection:
+- Create a .env file in the server directory.
+- Add your MongoDB connection string in the .env file:
+
+    ```env
+    MONGODB_URI=your_mongodb_connection_string
+
+
+## Start the Application:
+
+### Start the backend server:
+
+    ```bash
+    cd backend
+    npm run dev
+
+- Open a new terminal and start the frontend:
+
+### Start the frontend server:
+    ```bash
+    cd frontend
+    npm run dev
+
+- Your web app should now be accessible at http://localhost:5173.
+
+
