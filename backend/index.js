@@ -18,12 +18,12 @@ app.use(cors(
   // }
 ));
 
-app.get('/',(request,response) => {
+app.get('https://bookstore-mern-aziz.onrender.com/',(request,response) => {
   console.log(request);
   return response.status(234).send('Welcome To MERN BookStore');
 });
 
-app.use('/books', booksRoute);
+app.use('https://bookstore-mern-aziz.onrender.com/books', booksRoute);
 
 
 mongoose
