@@ -75,5 +75,3 @@ Before you begin, ensure you have the following installed on your machine:
         npm run dev
 
 - Your web app should now be accessible at http://localhost:5173.
-
-
