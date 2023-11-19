@@ -45,16 +45,11 @@ Before you begin, ensure you have the following installed on your machine:
 
 ## Install Dependencies:
 
-### Install backend dependencies:
-
-    ```bash
+1. **Install backend dependencies**
     cd backend
     npm install
 
-
-### Install frontend dependencies:
-
-    ```bash
+2. **Install frontend dependencies**
     cd ../frontend
     npm install
 
@@ -69,18 +64,15 @@ Before you begin, ensure you have the following installed on your machine:
 
 ## Start the Application:
 
-### Start the backend server:
-
-    ```bash
-    cd backend
-    npm run dev
+1. **Start the backend server**
+        cd backend
+        npm run dev
 
 - Open a new terminal and start the frontend:
 
-### Start the frontend server:
-    ```bash
-    cd frontend
-    npm run dev
+1. **Start the frontend server**
+        cd frontend
+        npm run dev
 
 - Your web app should now be accessible at http://localhost:5173.
 
