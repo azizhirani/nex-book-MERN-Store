@@ -10,13 +10,18 @@ const app = express();
 //middleware for parsing request body 
 app.use(express.json( )); 
 
-app.use(cors(
+const corsOptions = {
+  origin: 'https://bookstore-mern-aziz-frontend.onrender.com/'
+}
+app.use(cors(corsOptions));
   // {
   //   origin: 'http://localhost:3000',
   //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   //   allowHeaders: ['Content-Type'],
   // }
-));
+
+
+
 
 app.get('https://bookstore-mern-aziz.onrender.com/',(request,response) => {
   console.log(request);
