@@ -13,7 +13,7 @@ app.use(express.json( ));
 const corsOptions = {
   origin: 'https://bookstore-mern-aziz-lhb5.vercel.app/'
 }
-app.use(cors(corsOptions));
+app.use(cors());
   // {
   //   origin: 'http://localhost:3000',
   //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
