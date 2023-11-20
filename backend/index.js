@@ -11,9 +11,9 @@ const app = express();
 app.use(express.json( )); 
 
 const corsOptions = {
-  origin: 'https://bookstore-mern-aziz-lhb5.vercel.app/'
+  origin: 'https://rainbow-cannoli-d0460a.netlify.app/#/'
 }
-app.use(cors());
+app.use(cors(corsOptions));
   // {
   //   origin: 'http://localhost:3000',
   //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
