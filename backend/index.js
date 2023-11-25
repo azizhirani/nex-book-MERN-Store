@@ -39,8 +39,8 @@ app.get("*", function (_, res) {
 
 if (process.env.NODE_ENV === "production") {
     app.get('/', (req, res) => {
-        app.use(express.static(path.resolve(__dirname,'client','build')));
-        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+        app.use(express.static(path.join(__dirname, "../frontend/dist/")));
+        res.sendFile (path.join(__dirname, "../frontend/dist/index.html"));
     })
 }
 
