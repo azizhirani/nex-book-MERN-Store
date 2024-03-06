@@ -4,6 +4,8 @@
 
 This is a full-stack web application for managing book records. The application provides basic CRUD (Create, Read, Update, Delete) operations for book entries.
 
+- [click here -live preview](https://nex-book-mern-store.up.railway.app/)
+
 ## Technologies Used
 
 - **Frontend:**
