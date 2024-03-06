@@ -25,23 +25,24 @@ app.use(cors());
   //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   //   allowHeaders: ['Content-Type'],
   // }
-app.use('/api/books', require('./routes/booksRoute'));
-app.use(express.static(path.join(__dirname, "../frontend/dist/")));
-app.get("*", function (_, res) {
+  app.use('/api/books', require('./routes/booksRoute'));
 
-  res.sendFile(
-    path.join(__dirname, "../frontend/dist/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  );
-});
-
-if (process.env.NODE_ENV === "production") {
-    app.get('/', (req, res) => {
+  app.use(express.static(path.join(__dirname, "../frontend/dist/")));
+  app.get("*", function (_, res) {
+    
+    res.sendFile(
+      path.join(__dirname, "../frontend/dist/index.html"),
+      function (err) {
+        res.status(500).send(err);
+      }
+      );
+    });
+    
+    if (process.env.NODE_ENV === "production") {
+      app.get('/', (req, res) => {
         app.use(express.static(path.join(__dirname, "../frontend/dist/")));
         res.sendFile (path.join(__dirname, "../frontend/dist/index.html"));
-    })
+      })
 }
 
 
